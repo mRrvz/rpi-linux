@@ -114,6 +114,7 @@
 #include <net/xfrm.h>
 #include <net/net_namespace.h>
 #include <net/secure_seq.h>
+#include <net/encrypted.h>
 #ifdef CONFIG_IP_MROUTE
 #include <linux/mroute.h>
 #endif
@@ -2031,6 +2032,8 @@ static int __init inet_init(void)
 	raw_init();
 
 	ping_init();
+
+	encrypted_register();
 
 	/*
 	 *	Set the ICMP layer up
